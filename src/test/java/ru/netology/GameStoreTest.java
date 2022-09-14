@@ -15,8 +15,6 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game));
     }
 
-    // другие ваши тесты
-
     @Test
     public void shouldReturnFalseAddGames() {
 
@@ -33,8 +31,9 @@ public class GameStoreTest {
         GameStore store = new GameStore();
 
         Game game2 = new Game("Цивилизация", "Стратегия", store);
+        Game game3 = new Game("NFS", "Гонки", store);
 
-        assertFalse(store.containsGame(game2));
+        assertFalse(store.containsGame(game3));
     }
 
     @Test
@@ -94,11 +93,11 @@ public class GameStoreTest {
         GameStore store = new GameStore();
 
         store.addPlayTime("Kirill", 0);
-        store.addPlayTime("Kirill", 2);
+        store.addPlayTime("Sonya", 2);
 
 
         String actual = store.getMostPlayer();
-        String expected = "Kirill";
+        String expected = "Sonya";
         assertEquals(expected, actual);
     }
 
